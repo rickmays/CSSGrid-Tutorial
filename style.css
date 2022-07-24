@@ -33,64 +33,91 @@ body {
 /* Task 1 */
 
 .task-1.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 /* Task 2 */
 
 .task-2.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 12px;
+  align-items: center;
 }
 
 .task-2 .item-1 {
+  grid-column: 2 / span 4;
 }
 
 .task-2 .item-2 {
+  grid-column: 6 / span 6;
 }
 
 /* Task 3.1 */
 
 .task-3-1.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto auto 1fr auto auto auto;
+  gap: 24px;
 }
 
 @media (min-width: 720px) {
   .task-3-1.container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto 1fr auto;
   }
-
+  /* The header section takes 12 columns */
   .task-3-1 .header {
+    grid-column: 1 / span 12;
   }
-
+  /* The navigation section also takes 12 columns */
   .task-3-1 .navigation {
+    grid-column: 1 / span 12;
   }
-
+  /* The main section takes 10 columns starting with column 3 */
   .task-3-1 .main {
+    grid-column: 3 / span 10;
   }
-
+  /* The sidebar takes 2 columns starting from column 1 */
   .task-3-1 .sidebar {
+    grid-column: 1 / span 2;
+    grid-row: 3;
   }
-
+  /* The ads section takes 2 columns starting from column 1 */
   .task-3-1 .ads {
+    grid-column: 1 / span 2;
   }
-
+  /* The footer section takes 10 columns starting from column 3 */
   .task-3-1 .footer {
+    grid-column: 3 / span 10;
   }
 }
 
 @media (min-width: 1020px) {
-  .task-3-1 .header {
-  }
-
+  /* The navigation section takes 8 columns starting from column 3 */
   .task-3-1 .navigation {
+    grid-column: 3 / span 8;
   }
-
+  /* The main section takes 8 columns starting from column 3 */
   .task-3-1 .main {
+    grid-column: 3 / span 8;
   }
-
+  /* The sidebar starts at row 2 and ends at row 4 */
   .task-3-1 .sidebar {
+    grid-row: 2 / 4;
   }
-
+  /* The ads section takes 2 columns starting from column 11. It also takes 2 rows starting from row 2 and ending at row 4 */
   .task-3-1 .ads {
+    grid-column: 11 / span 2;
+    grid-row: 2 / 4;
   }
-
+  /* The footer section takes 12 columns starting from column 1 */
   .task-3-1 .footer {
+    grid-column: 1 / span 12;
   }
 }
 
